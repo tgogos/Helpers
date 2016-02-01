@@ -1,0 +1,45 @@
+
+CLONE A REPOSITORY: git clone https://github.com/tgogos/[name].git
+FETCH:       git remote update
+PULL:        git pull origin master
+COMMIT:      git commit -m "your message goes here..."
+PUSH:        git push -u origin master (The -u tells Git to remember the parameters, so that next time we can simply run "git push" and Git will know what to do.)
+REMOVE FILE: git rm [filename]         (wildcards can also be used, for example '*.txt' /don't forget using quotes)
+
+OTHER
+-----
+STATUS:		  	git status
+LOG:			  	git log
+INIT:			  	git init
+DIFF:			  	git diff HEAD	          (diff of the most recent commit)
+              git diff --staged       (see the changes you just staged)
+RESET Stage	  git reset [FILE]        (unstage files)
+UNDO			  	git checkout -- [FILE]  (File will be changed back to how it was at the last commit)
+SHOW CURRENT BRANCH git show-branch --current
+CREATE BRANCH		git branch [NAME]
+SWITCH BRANCH		git checkout [NAME]
+MERGE  BRANCH		git merge [NAME]        (for example go to 'master' branch with '$ git checkout master' and merge 'develop' branch into it with '$ git merge develop')
+DELETE BRANCH		git branch -d [NAME]
+
+
+STOP TRACKING	    	git update-index --assume-unchanged [path]
+UNDO STOP TRACKING	git update-index --no-assume-unchanged filename
+		
+git config user.name (shows your username)
+
+
+
+
+
+HOW TO ADD A LOCAL .GIT REPOSITORY TO BITBUCKET
+-------------------------------------------------
+
+after you have added files and done your first commit...
+	-	cd /path/to/my/repo git remote add origin https://[user]@bitbucket.org/[user]/[name].git
+	-	git push -u origin --all # pushes up the repo and its refs for the first time
+	-	git push -u origin --tags # pushes up any tags
+
+
+
+
+
