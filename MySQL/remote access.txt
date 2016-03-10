@@ -1,0 +1,10 @@
+STEP 1:
+------------
+$ -u root -p
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'your_password';
+
+STEP 2:
+------------
+$ nano /etc/mysql/my.cnf
+# comment out line: "bind-address           = 127.0.0.1"
+$service mysql restart
