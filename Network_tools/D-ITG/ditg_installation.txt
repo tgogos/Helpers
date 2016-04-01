@@ -1,0 +1,20 @@
+install D-ITG
+--------------
+wget http://traffic.comics.unina.it/software/ITG/codice/D-ITG-2.8.1-r1023-src.zip
+sudo apt-get install unzip
+unzip D-ITG-2.8.1-r1023-src.zip
+cd D-ITG-2.8.1-r1023/src/
+sudo make
+cd ../bin
+
+
+run example
+--------------
+	run server:		./ITGRecv
+	run client:		./ITGSend -poll -m rttm -T UDP -a 50.50.50.4 -c 64   -C 14880 -t 60000 -l sender64.log
+	see results:	./ITGDec   sender64.log
+	
+	
+Links:
+--------------
+https://www.ietf.org/rfc/rfc2544.txt
