@@ -40,6 +40,10 @@ after you have added files and done your first commit...
 	-	git push -u origin --tags # pushes up any tags
 
 
+HOW TO REMOVE FROM STAGING AREA (WHAT IS THE OPPOSITE OF GIT ADD)
+-------------------------------------------------------------------
+Let's say that you have made changes to a couple of files, used "git add ." and now you are ready to commit your changes.
+But then you think that it might be better to use more than one commits and group your files according to the reason they were changed. You can remove files from the staging area by using "git reset <file>"
 
 
 
