@@ -1,6 +1,6 @@
 STEP 1:
 ------------
-$ -u root -p
+$ mysql -u root -p
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'your_password';
 
 STEP 2:
