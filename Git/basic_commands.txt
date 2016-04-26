@@ -15,6 +15,13 @@ DIFF:			  	git diff HEAD	          (diff of the most recent commit)
               git diff --staged       (see the changes you just staged)
 RESET Stage	  git reset [FILE]        (unstage files)
 UNDO			  	git checkout -- [FILE]  (File will be changed back to how it was at the last commit)
+
+
+BRANCHES
+--------
+SHOW BOTH REMOTE & LOCAL BRANCHES: git branch -a
+SHOW ONLY REMOTE BRANCHES: git branch -r
+SHOW ONLY LOCAL  BRANCHES: git branch
 SHOW CURRENT BRANCH git show-branch --current
 CREATE BRANCH		git branch [NAME]
 SWITCH BRANCH		git checkout [NAME]
