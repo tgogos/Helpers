@@ -14,7 +14,12 @@ INIT:			  	git init
 DIFF:			  	git diff HEAD	          (diff of the most recent commit)
               git diff --staged       (see the changes you just staged)
 RESET Stage	  git reset [FILE]        (unstage files)
-UNDO			  	git checkout -- [FILE]  (File will be changed back to how it was at the last commit)
+
+
+BEFORE STAGING
+--------------
+DISCARD CHANGES	      git checkout -- [FILE]  (File will be changed back to how it was at the last commit)
+DISCARD CHANGES (ALL) git checkout -- .
 
 
 BRANCHES
