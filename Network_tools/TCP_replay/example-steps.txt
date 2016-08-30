@@ -1,5 +1,0 @@
-tcpprep --auto=client --pcap=getall.pcap --cachefile=input.cache
-sudo tcprewrite --enet-smac=FA:16:3E:CA:EA:2E --enet-dmac=FA:16:3E:13:26:B6 --endpoints=172.4.4.8:172.4.4.13 --skipbroadcast --cachefile=input.cache -i getall.pcap -o output.pcap
-sudo tcpreplay -i eth0 --loop=0 output.pcap
-
-sudo tcpreplay -i eth0 --loop=0 -t output.pcap # -t or --topspeed = Replay packets as fast as possible
