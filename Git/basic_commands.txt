@@ -21,6 +21,10 @@ BEFORE STAGING
 DISCARD CHANGES	      git checkout -- [FILE]  (File will be changed back to how it was at the last commit)
 DISCARD CHANGES (ALL) git checkout -- .
 
+DISCARD UNTRACKED FILES/FOLDERS git clean -df
+  # If an untracked directory is managed by a different Git repository,
+  # it is not removed by default. Use -f option twice if you really want to remove such a directory.
+
 
 BRANCHES
 --------
