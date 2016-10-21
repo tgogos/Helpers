@@ -1,15 +1,31 @@
-CLONE A REPOSITORY: git clone https://github.com/tgogos/[name].git
-FETCH:       git remote update
-PULL:        git pull origin master
-COMMIT:      git commit -m "your message goes here..."
-PUSH:        git push -u origin master (The -u tells Git to remember the parameters, so that next time we can simply run "git push" and Git will know what to do.)
+# Git handbook
+---
+## Basics
+```bash
+# init, clone, fetch, pull
+git init #to initialize a local git repo
+git clone https://github.com/tgogos/[name].git
+git remote update
+git pull origin master
+
+# check status, add changes, commit, push
+git status
+git add filename
+git add . #commonly used to add everything that was changed to the staging area
+git commit -m "short message goes here..."
+git commit -m "short message goes here..." -m "long description goes here (optional)..."
+
+#(The -u tells Git to remember the parameters, so that next time we can simply run "git push" and Git will know what to do.)
+git push -u origin master
 REMOVE FILE: git rm [filename]         (wildcards can also be used, for example '*.txt' /don't forget using quotes)
+```
+
 
 OTHER
 -----
-STATUS:		  	git status
+STATUS:		  	
 LOG:			  	git log
-INIT:			  	git init
+
 DIFF:			  	git diff HEAD	          (diff of the most recent commit)
               git diff --staged       (see the changes you just staged)
 RESET Stage	  git reset [FILE]        (unstage files)
