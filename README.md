@@ -6,9 +6,9 @@ quick reference for basic things....
  - [Git](Git/)
  - [MySQL](MySQL)
  - [Network tools](Network_tools/)
-  - [D-ITG](D-ITG/)
-  - [tcpreplay](TCP_replay/)
-  - [iperf](iperf/)
-  - [tcpdump](tcpdump/)
+  - [D-ITG](Network_tools/D-ITG/)
+  - [tcpreplay](Network_tools/TCP_replay/)
+  - [iperf](Network_tools/iperf/)
+  - [tcpdump](Network_tools/tcpdump/)
  - [SQL](SQL/)
  
