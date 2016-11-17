@@ -14,7 +14,7 @@ setInterval(function(){ pushToInfluxDB()},1000);
 		var load = Math.random();
 		$.ajax({
 		        type: 'POST',
-		        url:  'http://localhost:8086/write?db=paral1',
+		        url:  'http://localhost:8086/write?db=my_test_db',
 		        dataType:'text',
 		        data: "cpu_load_short,host=server01,region=us-west value="+load,
 		        success: function(data)
