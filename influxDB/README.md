@@ -19,9 +19,7 @@ setInterval(function(){ pushToInfluxDB()},1000);
 		        data: "cpu_load_short,host=server01,region=us-west value="+load,
 		        success: function(data)
 		        {        
-		           //console.log(data)
-		           document.getElementById('tar').value += ("\n" + "DB1: " + load);
-		           //setInterval(pushToInfluxDB_1(),1000);
+		           console.log(data)
 		        },
 		        error: function(err)
 		        {
