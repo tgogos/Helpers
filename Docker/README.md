@@ -22,6 +22,12 @@ Docker - quick reference
  - remove all containers: `docker rm $(docker ps -a -q)`
   - maybe you will have to stop all containers first: `docker stop $(docker ps -a -q)`
 
+## Commit images to Docker Hub
+example:
+```bash
+docker commit temp_container tgogos/ffmpeg:bbbunny-480
+docker push tgogos/ffmpeg:bbbunny-480
+```
 
 ### Possible states
 figure from: [https://docs.docker.com/engine/reference/api/docker_remote_api/](https://docs.docker.com/engine/reference/api/docker_remote_api/)
