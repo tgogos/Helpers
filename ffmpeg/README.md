@@ -3,7 +3,9 @@
 ## send video file
 
 ```bash
+# examples
 ffmpeg -re -i big_buck_bunny.mp4 -vcodec mpeg4 -an -b 1024k -s 640x480 -f mpegts udp://10.143.0.246:9999?pkt_size=1316
+ffmpeg -re -i big_buck_bunny_1080p_h264.mov -c:v mpeg4 -vtag xvid -b:v 5000k -an -f mpegts udp://10.143.0.234:9999
 
 #       -re (input)
 #           Read input at native frame rate. Mainly used to simulate a grab device.  or live input stream (e.g. when reading from a file). Should not be used with actual
