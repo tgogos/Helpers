@@ -11,6 +11,12 @@ Docker - quick reference
  - delete image example: `docker rmi resin/rpi-raspbian`
 
 ## Containers
+### Run
+
+```bash
+docker run -itd --name=CONTAINER_NAME ubuntu:TAG /bin/bash
+```
+
  - run a new container example: `docker run -it resin/rpi-raspbian`
     - docker creates a `new` container based on the image selected and assigns a random name, for example `lonely_keller`
     - run a new container providing name: `docker run --name ndpi_test -it resin/rpi-raspbian`
