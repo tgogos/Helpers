@@ -14,7 +14,13 @@ Docker - quick reference
 ### Run
 
 ```bash
+#  Most of the times I used the following...
+#  but it has problems because .profile is not used
+#  and you have to do it manually
 docker run -itd --name=CONTAINER_NAME ubuntu:TAG /bin/bash
+
+#  To overcome this I started using the following:
+docker run -itd --name=CONTAINER_NAME ubuntu:TAG bash -l
 ```
 
  - run a new container example: `docker run -it resin/rpi-raspbian`
