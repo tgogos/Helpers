@@ -21,6 +21,9 @@ docker run -itd --name=CONTAINER_NAME ubuntu:TAG /bin/bash
 
 #  To overcome this I started using the following:
 docker run -itd --name=CONTAINER_NAME ubuntu:TAG bash -l
+
+#  more info here:
+#  http://stackoverflow.com/questions/38024160/how-to-get-etc-profile-to-run-automatically-in-alpine-docker
 ```
 
  - run a new container example: `docker run -it resin/rpi-raspbian`
