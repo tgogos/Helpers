@@ -1,5 +1,11 @@
 # Linux
 
+## Crontab
+```bash
+#  wait some seconds before running the script...
+@reboot sleep 30s;bash /usr/scripts/run_my_app.sh
+```
+
 
 ## Processes
 Sources:
