@@ -108,3 +108,15 @@ sudo nano remote-api.conf
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
+
+## apt-get install ... (packages sometimes needed)
+```bash
+#  ifconfig
+apt-get install net-tools
+
+#  ping
+apt-get install iputils-ping
+
+#  traceroute
+apt-get install traceroute
+```
