@@ -16,3 +16,28 @@ sudo service mongod start
 sudo service mongod restart
 sudo service mongod stop
 ```
+
+
+Run 
+---
+
+MongoDB has provides a shell when you type `mongod`
+
+```bash
+$ mongod
+>
+```
+
+This is actually a javascript interpreter which lets us write js code:
+
+```javascript
+> var potion = {
+	"name": "Invisibility",
+	"vendor": "Kettlecooked"	
+  }
+> potion
+{
+  "name": "Invisibility",
+  "vendor": "Kettlecooked"	
+}
+```
