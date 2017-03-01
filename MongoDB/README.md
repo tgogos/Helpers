@@ -21,10 +21,10 @@ sudo service mongod stop
 Run 
 ---
 
-MongoDB has provides a shell when you type `mongod`
+MongoDB has provides a shell when you type `mongo`
 
 ```bash
-$ mongod
+$ mongo
 >
 ```
 
