@@ -15,6 +15,12 @@ sudo apt-get install -y mongodb-org
 sudo service mongod start
 sudo service mongod restart
 sudo service mongod stop
+
+#  start as a daemon and record log output to /var/log/mongodb.log
+mongod --fork --logpath /var/log/mongodb.log
+
+#  shutdown
+mongod --shutdown
 ```
 
 
