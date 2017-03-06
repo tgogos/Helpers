@@ -1,5 +1,10 @@
 
 #How to use tcpprep, tcprewrite & tcpreplay - simple examples
+
+```bash
+sudo apt-get install tcpreplay
+```
+
 ##Case 1:
 ```
 +---------+             +---------+ 
