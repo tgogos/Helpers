@@ -3,6 +3,8 @@ Docker - quick reference
 
 ## Links
  - [MySQL Docker Containers: Understanding the basics](https://severalnines.com/blog/mysql-docker-containers-understanding-basics)
+ - [What's the difference between RUN and CMD in a docker file and when should I use one or the other?](http://stackoverflow.com/questions/37461868/whats-the-difference-between-run-and-cmd-in-a-docker-file-and-when-should-i-use/37462208#37462208)
+ - [What is the difference between CMD and ENTRYPOINT in a Dockerfile?](http://stackoverflow.com/questions/21553353/what-is-the-difference-between-cmd-and-entrypoint-in-a-dockerfile)
  
 ## Images
  - search for images on https://hub.docker.com
