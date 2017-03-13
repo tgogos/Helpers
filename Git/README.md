@@ -10,7 +10,7 @@ git pull origin master
 
 # check status, add changes, commit, push
 git status
-git add filename
+git add [filename]
 git add . #commonly used to add everything that was changed to the staging area
 git commit -m "short message goes here..."
 git commit -m "short message goes here..." -m "long description goes here (optional)..."
@@ -86,6 +86,17 @@ git merge [NAME]
 
 # delete branch
 git branch -d [NAME]
+```
+
+
+## Submodules
+```bash
+# add
+git submodule add [git repo url]
+
+# pull latest commit
+git submodule update --recursive --remote
+git pull --recurse-submodules
 ```
 
 	
