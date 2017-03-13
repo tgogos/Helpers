@@ -38,6 +38,9 @@ git reset [FILE]
 
 
 ## Before "staging"
+
+> **important:** Be careful when using `git checkout -- ` because you might lose your work if the files have not been staged first. Read more about this at: [Can git undo a checkout of unstaged files?](http://stackoverflow.com/questions/2689265/can-git-undo-a-checkout-of-unstaged-files) 
+
 ```bash
 # discard changes
 # (File will be changed back to how it was at the last commit)
