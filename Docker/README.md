@@ -28,6 +28,15 @@ docker run -itd --name=CONTAINER_NAME ubuntu:TAG bash -l
 #  http://stackoverflow.com/questions/38024160/how-to-get-etc-profile-to-run-automatically-in-alpine-docker
 ```
 
+### Enter running Container with new TTY
+
+This is very useful to cases where you have to start a program that starts printing logs in the standard output and you also want another CLI to do other stuff...
+```bash
+docker exec -it "id of running container" bash
+```
+
+### Misc
+
  - run a new container example: `docker run -it resin/rpi-raspbian`
     - docker creates a `new` container based on the image selected and assigns a random name, for example `lonely_keller`
     - run a new container providing name: `docker run --name ndpi_test -it resin/rpi-raspbian`
