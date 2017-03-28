@@ -54,6 +54,9 @@ docker exec -it "id of running container" bash
  - maybe you will have to stop all containers first: `docker stop $(docker ps -a -q)`
  - remove all images: `docker rmi $(docker images -q)`
  - remove all untagged images `docker rmi $(docker images | grep "^<none>" | awk "{print $3}")` (source: [Remove Untagged Images From Docker](http://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html)
+ - remove all volumes: `docker volume rm $(docker volume ls -q)`
+ - remove all volumes (safer): `$(docker volume ls -qf dangling=true)`
+ - remove all volumes when docker version > 1.13.0 (2017-01-18): `docker volume prune`
   
 
 ## Commit images to Docker Hub
