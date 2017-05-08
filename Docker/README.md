@@ -138,3 +138,18 @@ apt-get install iputils-ping
 #  traceroute
 apt-get install traceroute
 ```
+
+## How to keep a container running
+
+inside the `Dockerfile`:
+
+```
+CMD ./start.sh
+```
+
+inside the `start.sh`:
+
+```
+# (found here: http://stackoverflow.com/a/30209974/1561148)
+tail -f /dev/null
+```
