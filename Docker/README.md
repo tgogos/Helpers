@@ -88,6 +88,18 @@ docker exec rose ifconfig
 ```bash
 # There is a --opt option which can be used like this:
 docker network create --opt com.docker.network.bridge.name=br_test test-net
+
+
+# or to do the same within a docker-compose.yml file:
+networks:
+  test-net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br_test
+    ipam:
+     driver: default
+     config:
+       - subnet: 172.100.0.0/16
 ```
 
 ### Ping the container
