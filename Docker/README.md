@@ -94,12 +94,12 @@ docker network create --opt com.docker.network.bridge.name=br_test test-net
 networks:
   test-net:
     driver: bridge
-    driver_opts:
-      com.docker.network.bridge.name: br_test
     ipam:
      driver: default
      config:
        - subnet: 172.100.0.0/16
+    driver_opts:
+      com.docker.network.bridge.name: br_test
 ```
 
 ### Ping the container
