@@ -83,6 +83,13 @@ docker run  -d --name rose --net=frontend busybox top
 #busybox is the docker image to pull (if not already available) and then start with command "top"
 docker exec rose ifconfig
 ```
+
+### Create a new network and specify interface name
+```bash
+# There is a --opt option which can be used like this:
+docker network create --opt com.docker.network.bridge.name=br_test test-net
+```
+
 ### Ping the container
 ```bash
 docker run --rm busybox ping -c 4 rose
