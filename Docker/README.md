@@ -57,6 +57,7 @@ docker exec -it "id of running container" bash
  - remove all volumes: `docker volume rm $(docker volume ls -q)`
  - remove all volumes (safer): `$(docker volume ls -qf dangling=true)`
  - remove all volumes when docker version > 1.13.0 (2017-01-18): `docker volume prune`
+ - display number of container restarts: `docker inspect -f "{{ .RestartCount }}" <container_id>`
   
 
 ## Commit images to Docker Hub
