@@ -11,7 +11,8 @@ git pull origin master
 # check status, add changes, commit, push
 git status
 git add [filename]
-git add . #commonly used to add everything that was changed to the staging area
+git add .     # commonly used to add everything that was changed to the staging area
+git add --all # like the above
 git commit -m "short message goes here..."
 git commit -m "short message goes here..." -m "long description goes here (optional)..."
 
