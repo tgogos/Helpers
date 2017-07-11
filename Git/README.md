@@ -35,6 +35,18 @@ git diff --staged
 
 # unstage files
 git reset [FILE]
+
+# undo last commit, put changes into staging
+git reset --soft HEAD^
+# change the last commit
+git commit --amend -m "New message"
+
+# undo last commit and all changes
+git reset --hard HEAD^
+
+# undo last 2 commits and all changes
+git reset --hard HEAD^^
+
 ```
 
 
