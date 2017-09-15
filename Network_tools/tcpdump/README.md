@@ -13,3 +13,7 @@ tcpdump -c 20 -s 0 -i eth1 -A host 192.168.1.1 and tcp port http
 #   host 192.168.1.1: Only capture packets coming to or from 192.168.1.1.
 #   and tcp port http: Only capture HTTP packets.
 ```
+
+```
+sudo tcpdump 'udp and  host <ip_here>'
+```
