@@ -7,6 +7,8 @@ git init #to initialize a local git repo
 git clone https://github.com/tgogos/[name].git
 git remote update
 git pull origin master
+git pull --all  # pull all remote branches
+git fetch --all # fetch all remote branches
 
 # check status, add changes, commit, push
 git status
