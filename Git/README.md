@@ -30,7 +30,7 @@ git rm [filename]
 git log
 
 # diff of the most recent commit
-git diff HEAD
+git diff HEAD^ HEAD
 
 # see the changes you just staged
 git diff --staged
