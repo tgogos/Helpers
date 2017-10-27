@@ -28,6 +28,7 @@ git rm [filename]
 
 # commit history
 git log
+git log --diff-filter=A -- foo.js #find commit where file was added
 
 # diff of the most recent commit
 git diff HEAD^ HEAD
