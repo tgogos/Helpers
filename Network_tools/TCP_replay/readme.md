@@ -1,11 +1,11 @@
 
-#How to use tcpprep, tcprewrite & tcpreplay - simple examples
+# How to use tcpprep, tcprewrite & tcpreplay - simple examples
 
 ```bash
 sudo apt-get install tcpreplay
 ```
 
-##Case 1:
+## Case 1:
 ```
 +---------+             +---------+ 
 |   src   |<----------->|   dst   |
@@ -22,7 +22,7 @@ sudo apt-get install tcpreplay
     `sudo tcpreplay -i eth0 --loop=0 -t output.pcap # -t or --topspeed to replay packets as fast as possible`
     
 
-##Case 2:
+## Case 2:
 ```
 +---------+             +---------+             +---------+ 
 |   src   |<----------->|   gtw   |<----------->|   dst   |
