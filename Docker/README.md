@@ -1,6 +1,8 @@
 Docker - quick reference
 ========================
 
+Docker Basics e-book: [Docker-for-Virtualization-Admin-eBook.pdf](Docker-for-Virtualization-Admin-eBook.pdf)
+
 ## Links
  - [Docker for beginners](https://prakhar.me/docker-curriculum/)
  - [MySQL Docker Containers: Understanding the basics](https://severalnines.com/blog/mysql-docker-containers-understanding-basics)
