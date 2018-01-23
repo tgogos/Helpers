@@ -173,3 +173,19 @@ inside the `start.sh`:
 # (found here: http://stackoverflow.com/a/30209974/1561148)
 tail -f /dev/null
 ```
+
+
+## Environment Variables
+
+example from: https://stackoverflow.com/questions/48402906/how-to-set-system-wide-environment-variables-in-dockerfile-from-a-file-inside-th
+
+```
+$ docker run -it alpine echo $HOME
+/home/lars
+
+$ docker run -it alpine echo '$HOME'
+$HOME
+
+$ docker run -it alpine sh -c 'echo $HOME'
+/root
+```
