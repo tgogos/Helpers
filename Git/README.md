@@ -183,3 +183,24 @@ Examples:
     git checkout HEAD^
     git checkout HEAD^
     ```
+ - `git checkout HEAD~4`
+
+
+## Reversing Changes in Git
+There are many ways to reverse changes in Git. And just like committing, reversing changes in Git has both a low-level component (staging individual files or chunks) and a high-level component (how the changes are actually reversed). Our application will focus on the latter.
+
+There are two primary ways to undo changes in Git -- one is using `git reset` and the other is using `git revert`.
+
+## Git Reset
+
+`git reset` reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as "rewriting history;" `git reset` will move a branch backwards as if the commit had never been made in the first place. Example command:
+
+ - `git reset HEAD~1`
+
+## Git Revert
+
+While reseting works great for local branches on your own machine, its method of "rewriting history" **doesn't work for remote branches** that others are using.
+
+In order to reverse changes and share those reversed changes with others, we need to use `git revert`. Example command:
+
+ - `git revert HEAD`
