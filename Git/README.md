@@ -156,3 +156,30 @@ Normally HEAD points to a branch name (like bugFix). When you commit, the status
 
 ## Detaching HEAD
 Detaching HEAD just means attaching it to a commit instead of a branch.
+
+
+## Relative Refs
+Moving around in Git by specifying commit hashes can get a bit tedious. In the real world you won't have a nice commit tree visualization next to your terminal, so you'll have to use git log to see hashes.
+
+Furthermore, hashes are usually a lot longer in the real Git world as well. For instance, the hash of the commit that introduced the previous level is `fed2da64c0efc5293610bdd892f82a58e8cbc5d8`. Doesn't exactly roll off the tongue...
+
+The upside is that Git is smart about hashes. It only requires you to specify enough characters of the hash until it uniquely identifies the commit. So I can type `fed2` instead of the long string above.
+
+With relative refs, you can start somewhere memorable (like the branch bugFix or HEAD) and work from there.
+
+Relative commits are powerful, but we will introduce two simple ones here:
+
+ - Moving upwards one commit at a time with `^`
+ - Moving upwards a number of times with `~<num>`
+
+Examples:
+
+ - `git checkout master^`
+ - We can travel backwards in time with `HEAD^`:
+ 
+    ```
+    git checkout fed2
+    git checkout HEAD^
+    git checkout HEAD^
+    git checkout HEAD^
+    ```
