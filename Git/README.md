@@ -126,3 +126,22 @@ git pull --recurse-submodules
 git config user.name
 
 ```
+
+# [learngitbranching.js.org](https://learngitbranching.js.org/)
+
+## Git Branches
+Branches in Git are incredibly lightweight as well. They are simply pointers to a specific commit -- nothing more. This is why many Git enthusiasts chant the mantra:
+
+> *branch early, and branch often*
+
+Because there is **no storage / memory overhead** with making many branches, it's easier to **logically divide up your work** than have big beefy branches.
+
+
+## Branches and Merging
+The first method to combine work that we will examine is git merge. Merging in Git creates a special commit that has two unique parents. A commit with two parents essentially means *"I want to include all the work from this parent over here and this one over here, and the set of all their parents."*
+
+
+## Git Rebase
+The second way of combining work between branches is rebasing. Rebasing essentially takes a set of commits, "copies" them, and plops them down somewhere else.
+
+While this sounds confusing, the advantage of rebasing is that it can be used to make a **nice linear sequence of commits**. The commit log / history of the repository will be a lot cleaner if only rebasing is allowed.
