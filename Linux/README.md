@@ -52,3 +52,14 @@ fi
 # while kill sends the SIGTERM (termination) signal by default unless you specify the signal to send.
 $ kill -SIGINT processPIDHere
 ```
+
+### how to transfer a file with `Netcat` by @b0rk
+
+target host:
+
+    hostname -I # to see its IP address
+    nc -l <port> > bigfile
+    
+source host:
+
+    cat path/to/bigfile | nc <target_IP> <port>
