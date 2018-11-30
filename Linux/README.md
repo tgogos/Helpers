@@ -63,3 +63,13 @@ target host:
 source host:
 
     cat path/to/bigfile | nc <target_IP> <port>
+
+### Openstack: how to launch Ubuntu cloud-image instance with user & password
+
+The step-by-step guide lets you at some point to add a script. This does the job:
+
+    #cloud-config
+    ssh_pwauth: True
+    password: passw0rd
+
+The default user is `ubuntu` and you will be asked to change password on the first login.
