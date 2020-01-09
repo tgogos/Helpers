@@ -56,3 +56,33 @@ In this exercise, you will retrieve nodes from the database by specifying a filt
 -   **Exercise 2.6**: Display more user-friendly headers in the table.
 
         MATCH (m:Movie) RETURN m.title AS `movie title`, m.released AS released, m.tagline AS tagLine
+
+
+
+
+
+## Exercise 3: Filtering queries using relationships (Overview)
+
+In the previous exercise, you have filtered what nodes and properties are returned from a query based upon a value of a property for a node.
+
+In this exercise, you will write queries that filter the nodes and property values that are returned based upon the relationships between nodes. You will first use an anonymous node to specify a filter based upon a node's specific relationship to other nodes. Then you will write a query that selects data based upon any relationship between nodes. Next, you will write a Cypher query to return information about the relationships between nodes. Finally, you will write a query to return property values for the relationships between nodes.
+
+-   **Exercise 3.1:** Display the schema of the database.
+
+        CALL db.schema()
+
+-   **Exercise 3.2**: Retrieve all people who wrote the movie *Speed Racer*.
+
+        MATCH (p:Person)-[:WROTE]->(:Movie {title: 'Speed Racer'}) RETURN p.name
+
+-   **Exercise 3.3**: Retrieve all movies that are connected to the person, *Tom Hanks*.
+
+        MATCH (m:Movie)<--(:Person {name: 'Tom Hanks'}) RETURN m.title
+
+-   **Exercise 3.4:** Retrieve information about the relationships *Tom Hanks* had with the set of movies retrieved earlier.
+
+        MATCH (m:Movie)-[rel]-(:Person {name: 'Tom Hanks'}) RETURN m.title, type(rel)
+
+-   **Exercise 3.5:** Retrieve information about the roles that *Tom Hanks* acted in.
+
+        MATCH (m:Movie)-[rel:ACTED_IN]-(:Person {name: 'Tom Hanks'}) RETURN m.title, rel.roles
