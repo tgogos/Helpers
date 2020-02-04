@@ -137,11 +137,18 @@ In this exercise, you will write queries that filter the results that are return
 
 -   **Exercise 4.7**: Retrieve all people related to movies where the relationship has a property.
 
-
+        MATCH (a:Person)-[rel]->(m:Movie)
+        WHERE exists(rel.rating)
+        RETURN a.name as Name, m.title as Movie, rel.rating as Rating
 
 -   **Exercise 4.8**: Retrieve all actors whose name begins with *James*.
 
-
+        MATCH (a:Person)-[:ACTED_IN]->(:Movie)
+        WHERE a.name STARTS WITH 'James'
+        RETURN a.name
 
 -   **Exercise 4.9**: Retrieve all all *REVIEW* relationships from the graph with filtered results.
 
+        MATCH (:Person)-[r:REVIEWED]->(m:Movie)
+        WHERE toLower(r.summary) CONTAINS 'fun'
+        RETURN  m.title as Movie, r.summary as Review, r.rating as Rating
