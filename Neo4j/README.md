@@ -152,3 +152,15 @@ In this exercise, you will write queries that filter the results that are return
         MATCH (:Person)-[r:REVIEWED]->(m:Movie)
         WHERE toLower(r.summary) CONTAINS 'fun'
         RETURN  m.title as Movie, r.summary as Review, r.rating as Rating
+
+-   **Exercise 4.10**: Retrieve all people who have produced a movie, but have not directed a movie
+
+        MATCH (a:Person)-[:PRODUCED]->(m:Movie)
+        WHERE NOT ((a)-[:DIRECTED]->(:Movie))
+        RETURN a.name, m.title
+
+-   **Exercise 4.11**: 👍👍👍 Retrieve the movies and their actors where one of the actors also directed the movie
+
+        MATCH (a1:Person)-[:ACTED_IN]->(m:Movie)<-[:ACTED_IN]-(a2:Person)
+        WHERE exists( (a2)-[:DIRECTED]->(m) )
+        RETURN  a1.name as Actor, a2.name as `Actor/Director`, m.title as Movie
