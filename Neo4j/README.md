@@ -164,3 +164,15 @@ In this exercise, you will write queries that filter the results that are return
         MATCH (a1:Person)-[:ACTED_IN]->(m:Movie)<-[:ACTED_IN]-(a2:Person)
         WHERE exists( (a2)-[:DIRECTED]->(m) )
         RETURN  a1.name as Actor, a2.name as `Actor/Director`, m.title as Movie
+
+-   **Exercise 4.12**: Retrieve all movies that were released in a set of years (Solution)
+
+        MATCH (m:Movie)
+        WHERE m.released in [2000, 2004, 2008]
+        RETURN m.title, m.released
+
+-   **Exercise 4.13**: Retrieve the movies that have an actor’s role that is the name of the movie
+
+        MATCH (a:Person)-[r:ACTED_IN]->(m:Movie)
+        WHERE m.title in r.roles
+        RETURN  m.title as Movie, a.name as Actor
