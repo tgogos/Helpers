@@ -86,3 +86,62 @@ In this exercise, you will write queries that filter the nodes and property valu
 -   **Exercise 3.5:** Retrieve information about the roles that *Tom Hanks* acted in.
 
         MATCH (m:Movie)-[rel:ACTED_IN]-(:Person {name: 'Tom Hanks'}) RETURN m.title, rel.roles
+
+
+
+
+
+
+
+## Exercise 4: Filtering queries using the `WHERE` clause (Overview)
+
+In the previous exercise, you have filtered your queries based upon node labels, property values, and relationships in a `MATCH` pattern.
+
+In this exercise, you will write queries that filter the results that are returned using a `WHERE` clause. First, you will write some queries that filter based upon property values. Then you will specify node labels in the filter. Next, you will test whether a property exists. Then you will filter queries based upon string comparisons. Next, you will write queries that filter based upon patterns in the graph. Finally, you will test if property values are in a list.
+
+-   **Exercise 4.1**: Retrieve all movies that *Tom Cruise* acted in.
+
+        MATCH (a:Person)-[:ACTED_IN]->(m:Movie)
+        WHERE a.name = 'Tom Cruise'
+        RETURN m.title as Movie
+
+-   **Exercise 4.2**: Retrieve all people that were born in the 70's.
+
+        MATCH (a:Person)
+        WHERE a.born >= 1970 AND a.born < 1980
+        RETURN a.name as Name, a.born as `Year Born`
+
+-   **Exercise 4.3**: Retrieve the actors who acted in the movie *The Matrix* who were born after 1960.
+
+        MATCH (a:Person)-[:ACTED_IN]->(m:Movie)
+        WHERE a.born > 1960 AND m.title = 'The Matrix'
+        RETURN a.name as Name, a.born as `Year Born`
+
+-   **Exercise 4.4**: Retrieve all movies by testing the node label and a property.
+
+        MATCH (m)
+        WHERE m:Movie AND m.released = 2000
+        RETURN m.title
+
+-   **Exercise 4.5**: Retrieve all people that wrote movies by testing the relationship between two nodes.
+
+        MATCH (a)-[rel]->(m)
+        WHERE a:Person AND type(rel) = 'WROTE' AND m:Movie
+        RETURN a.name as Name, m.title as Movie
+
+-   **Exercise 4.6**: Retrieve all people in the graph that do not have a property.
+
+        MATCH (a:Person)
+        WHERE NOT exists(a.born)
+        RETURN a.name as Name
+
+-   **Exercise 4.7**: Retrieve all people related to movies where the relationship has a property.
+
+
+
+-   **Exercise 4.8**: Retrieve all actors whose name begins with *James*.
+
+
+
+-   **Exercise 4.9**: Retrieve all all *REVIEW* relationships from the graph with filtered results.
+
