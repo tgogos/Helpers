@@ -263,3 +263,54 @@ In this exercise, you will write queries that filter the results that are return
         WHERE directors >= 2
         OPTIONAL MATCH (p:Person)-[:REVIEWED]->(m)
         RETURN  m.title, p.name
+
+
+
+
+
+
+
+
+## Exercise 6: Controlling results returned (Overview)
+
+In the previous exercise, you wrote queries to perform additional filtering, count and collect results, as well as to perform some intermediate processing during the query.
+
+In this exercise, you will write queries where you can customize what results are returned and if they will be sorted. First, you will write a query that eliminates duplication of rows returned. Then you write a query that sorts the data returned. Finally, you will write a query to limit the number of results returned.
+
+-   **Exercise 6.1**: Execute a query that returns duplicate records. You want to know what actors acted in movies in the decade starting with the year 1990. First write a query to retrieve all actors that acted in movies during the 1990s, where you return the released date, the movie title, and the collected actor names for the movie. For now do not worry about duplication.
+
+        MATCH (a:Person)-[:ACTED_IN]->(m:Movie)
+        WHERE m.released >= 1990 AND m.released < 2000
+        RETURN DISTINCT m.released, m.title, collect(a.name)
+
+-   **Exercise 6.2**: Modify the query to eliminate duplication. The results returned from the previous query include multiple rows for a movie released value. Next, modify the query so that the released date records returned are not duplicated. To implement this, you must add the collection of the movie titles to the results returned.
+
+        MATCH (a:Person)-[:ACTED_IN]->(m:Movie)
+        WHERE m.released >= 1990 AND m.released < 2000
+        RETURN  m.released, collect(m.title), collect(a.name)
+
+-   **Exercise 6.3**: Modify the query to eliminate more duplication. The results returned from the previous query returns the collection of movie titles with duplicates. That is because there are multiple actors per released year. Next, modify the query so that there is no duplication of the movies listed for a year.
+
+        MATCH (a:Person)-[:ACTED_IN]->(m:Movie)
+        WHERE m.released >= 1990 AND m.released < 2000
+        RETURN  m.released, collect(DISTINCT m.title), collect(a.name)
+
+-   **Exercise 6.4**: Sort results returned. Modify the query that you just wrote to order the results returned so that the more recent years are displayed first.
+
+        MATCH (a:Person)-[:ACTED_IN]->(m:Movie)
+        WHERE m.released >= 1990 AND m.released < 2000
+        RETURN  m.released, collect(DISTINCT m.title), collect(a.name)
+        ORDER BY m.released DESC
+
+-   **Exercise 6.5**: Retrieve the top 5 ratings and their associated movies.
+
+        MATCH (:Person)-[r:REVIEWED]->(m:Movie)
+        RETURN  m.title AS movie, r.rating AS rating
+        ORDER BY r.rating DESC LIMIT 5
+
+-   **Exercise 6.6**: Retrieve all actors that have not appeared in more than 3 movies.
+
+        MATCH (a:Person)-[:ACTED_IN]->(m:Movie)
+        WITH  a,  count(a) AS numMovies, collect(m.title) AS movies
+        WHERE numMovies <= 3
+        RETURN a.name, movies
