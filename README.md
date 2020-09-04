@@ -2,6 +2,7 @@ Helpers
 =======
 quick reference for basic things....
 
+ - [Apache](Apache/)
  - [C](C/)
  - [Docker](Docker/)
  - [Git](Git/)
