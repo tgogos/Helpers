@@ -58,3 +58,40 @@ When using the Apache web server, you can use *virtual hosts* (similar to server
 9. Restart Apache to implement your changes:
 
         sudo systemctl restart apache2
+
+
+
+## Virtual Host & Reverse Proxy combination for service running on `:8080` 
+
+Source: [How To Use Apache as a Reverse Proxy with mod_proxy](https://www.digitalocean.com/community/tutorials/how-to-use-apache-as-a-reverse-proxy-with-mod_proxy-on-ubuntu-16-04)
+
+1. Enable these four modules, execute the following commands in succession:
+
+       sudo a2enmod proxy
+       sudo a2enmod proxy_http
+       sudo a2enmod proxy_balancer
+       sudo a2enmod lbmethod_byrequests
+
+
+2. To put these changes into effect, restart Apache.
+
+       sudo systemctl restart apache2
+
+3. Make a new Virtual Host file (see previous section)
+
+       <VirtualHost *:80>
+           ServerAdmin webmaster@localhost
+           ServerName your_domain
+           ServerAlias your_domain
+           
+           ProxyPreserveHost On
+           ProxyPass / http://127.0.0.1:8080/
+           ProxyPassReverse / http://127.0.0.1:8080/
+
+           ErrorLog ${APACHE_LOG_DIR}/error.log
+           CustomLog ${APACHE_LOG_DIR}/access.log combined
+       </VirtualHost>
+
+4. To put these changes into effect, restart Apache.
+
+       sudo systemctl restart apache2
