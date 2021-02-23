@@ -204,3 +204,53 @@ While reseting works great for local branches on your own machine, its method of
 In order to reverse changes and share those reversed changes with others, we need to use `git revert`. Example command:
 
  - `git revert HEAD`
+
+
+<br>
+<br>
+<br>
+<br>
+---
+<br>
+<br>
+<br>
+<br>
+
+
+## `origin` & `upstream` workflow
+
+- `origin` can be a fork of a repository which is now under **your personal** github account
+- `upstream` can be the repository of your company / organization where you have to do pull-requests
+
+The `.git/config` of your local repo contains something like this:
+
+```
+[remote "origin"]
+	url = https://github.com/tgogos/[repo_name]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+...
+[remote "upstream"]
+	url = https://github.com/[company/org]/[repo_name]
+	fetch = +refs/heads/*:refs/remotes/upstream/*
+```
+
+### Sync your fork with `upstream`
+
+More details:
+ - [How do I update a GitHub forked repository?](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
+ - [Syncing a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
+
+Summary / steps:
+
+```
+# Step 1: fetch
+git fetch upstream
+
+# Step 2: merge
+git checkout master
+git merge upstream/master
+
+# Step 3: push
+git push
+```
+
