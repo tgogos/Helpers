@@ -4,6 +4,7 @@ quick reference for basic things....
 
  - [Apache](Apache/)
  - [C](C/)
+ - [curl](curl/)
  - [Docker](Docker/)
  - [Git](Git/)
  - [Go](Go/)
